@@ -37,7 +37,7 @@ public class robotCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_subsystem.drive(robotController.getY(Hand.kLeft), robotController.getX(Hand.kRight));
+    m_subsystem.drive(-robotController.getY(Hand.kLeft), robotController.getX(Hand.kRight));
   }
 
   // Called once the command ends or is interrupted.
