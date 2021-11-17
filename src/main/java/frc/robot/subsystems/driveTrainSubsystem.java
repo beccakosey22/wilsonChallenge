@@ -23,7 +23,6 @@ public class driveTrainSubsystem extends SubsystemBase {
   private DifferentialDrive movement; 
   public driveTrainSubsystem() {
     super();
-    rightLeader.setInverted(true);
 
     left2.follow(leftLeader);
     left3.follow(leftLeader);
