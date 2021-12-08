@@ -6,8 +6,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.indexCommand;
 import frc.robot.commands.robotCommand;
 import frc.robot.subsystems.driveTrainSubsystem;
+import frc.robot.subsystems.indexSubSystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -22,11 +24,18 @@ public class RobotContainer {
 
   private final robotCommand m_autoCommand = new robotCommand(m_exampleSubsystem);
 
+  private final indexSubSystem m_indexSubSystem = new indexSubSystem();
+
+  private final indexCommand m_indexCommand = new indexCommand(m_indexSubSystem);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
     m_exampleSubsystem.setDefaultCommand(m_autoCommand);
+    m_indexSubSystem.setDefaultCommand(m_indexCommand);
+    
+  
   }
 
   /**
